@@ -83,7 +83,7 @@ export function TelegramNotificationsPage() {
   };
 
   const disconnect = async (purpose: TelegramDestinationPurpose) => {
-    if (!window.confirm("Disconnect this Telegram destination from SellFlow?")) return;
+    if (!window.confirm("Disconnect this Telegram destination from Selltify?")) return;
     setWorking(`disconnect:${purpose}`);
     try {
       setSettings(await telegramNotificationService.disconnect(purpose));
@@ -163,7 +163,7 @@ function ConnectionInstructions({ connection, onCopy, onRefresh }: { connection:
         <div className="grid gap-4 sm:grid-cols-3">
           <Step number="1" title="Add the bot" text={connection.purpose === "sales_channel" ? "Add the bot as a channel administrator." : "Add the bot to the selected Telegram group."} />
           <Step number="2" title="Send the command" text="Paste the one-time command exactly as shown." />
-          <Step number="3" title="Return here" text="SellFlow will recognize the connection automatically." />
+          <Step number="3" title="Return here" text="Selltify will recognize the connection automatically." />
         </div>
         <div className="rounded-xl border border-slate-200 bg-slate-950 p-4 text-white sm:flex sm:items-center sm:gap-4">
           <code className="block min-w-0 flex-1 overflow-x-auto whitespace-nowrap text-sm font-semibold text-emerald-300">{connection.command}</code>

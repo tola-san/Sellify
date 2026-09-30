@@ -122,7 +122,7 @@ export function OnboardingPage() {
         });
       }
 
-      showToast("Your store is ready. Welcome to SellFlow!");
+      showToast("Your store is ready. Welcome to Selltify!");
       navigate("/dashboard", { replace: true });
     } catch (exception) {
       setError(apiErrorMessage(exception));
@@ -144,7 +144,7 @@ export function OnboardingPage() {
             <Store size={20} />
           </span>
           <div>
-            <p className="font-bold">SellFlow</p>
+            <p className="font-bold">Selltify</p>
             <p className="text-xs text-slate-400">Store setup</p>
           </div>
         </div>
@@ -156,7 +156,7 @@ export function OnboardingPage() {
       <main className="relative z-10 mx-auto max-w-6xl px-5 pb-12 sm:px-8">
         <div className="grid overflow-hidden rounded-[28px] border border-white/10 bg-white shadow-2xl shadow-black/30 lg:grid-cols-[330px_1fr]">
           <aside className="bg-gradient-to-br from-purple-700 via-violet-700 to-indigo-800 p-7 text-white sm:p-9">
-            <p className="text-xs font-bold uppercase tracking-[0.22em] text-purple-200">Welcome to SellFlow</p>
+            <p className="text-xs font-bold uppercase tracking-[0.22em] text-purple-200">Welcome to Selltify</p>
             <h1 className="mt-4 text-3xl font-bold leading-tight">
               Let&apos;s build your store.
             </h1>
@@ -191,7 +191,7 @@ export function OnboardingPage() {
               <div>
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-purple-600">Step 1 of 2</span>
                 <h2 className="mt-2 text-2xl font-bold text-slate-950 sm:text-3xl">What kind of business do you run?</h2>
-                <p className="mt-2 text-sm leading-6 text-slate-500">Choose the closest match. This helps SellFlow personalize your setup.</p>
+                <p className="mt-2 text-sm leading-6 text-slate-500">Choose the closest match. This helps Selltify personalize your setup.</p>
 
                 <div className="mt-7 grid gap-3 sm:grid-cols-2">
                   {BUSINESS_TYPES.map((type) => {

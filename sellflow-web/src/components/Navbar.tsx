@@ -46,7 +46,7 @@ export function Navbar() {
             : "bg-white/20 backdrop-blur-lg"
         }`}
       >
-        <Link to="/" className="transition hover:-translate-y-0.5" aria-label="SellFlow home"><BrandLogo /></Link>
+        <Link to="/" className="transition hover:-translate-y-0.5" aria-label="Selltify home"><BrandLogo /></Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
           {navLinks.map((link) => (

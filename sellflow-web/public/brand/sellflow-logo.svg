@@ -1,18 +1,13 @@
 <svg width="360" height="96" viewBox="0 0 360 96" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="sellflow-logo-gradient" x1="10" y1="8" x2="82" y2="88" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7657E8"/>
-      <stop offset="0.5" stop-color="#846CF0"/>
-      <stop offset="1" stop-color="#22C8EB"/>
-    </linearGradient>
+    <linearGradient id="logo-top" x1="12" y1="14" x2="48" y2="47" gradientUnits="userSpaceOnUse"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#6D28D9"/><stop offset="1" stop-color="#DDD6FE"/></linearGradient>
+    <linearGradient id="logo-left" x1="25" y1="26" x2="34" y2="58" gradientUnits="userSpaceOnUse"><stop stop-color="#7C3AED"/><stop offset="1" stop-color="#E9D5FF"/></linearGradient>
+    <linearGradient id="logo-right" x1="49" y1="27" x2="40" y2="59" gradientUnits="userSpaceOnUse"><stop stop-color="#8B5CF6"/><stop offset="1" stop-color="#E0E7FF"/></linearGradient>
   </defs>
-  <g transform="translate(4 4) scale(1.375)">
-    <rect x="3" y="3" width="58" height="58" rx="18" fill="url(#sellflow-logo-gradient)"/>
-    <path d="M22 23V20C22 14.5 26.5 10 32 10C37.5 10 42 14.5 42 20V23" stroke="white" stroke-width="4" stroke-linecap="round"/>
-    <path d="M15.5 22.5H48.5L46 52.5H18L15.5 22.5Z" fill="white" fill-opacity="0.14" stroke="white" stroke-opacity="0.72" stroke-width="2" stroke-linejoin="round"/>
-    <path d="M43 29H27.5C23.9 29 21 31.3 21 34.2C21 37.1 23.9 39.4 27.5 39.4H36.5C40.1 39.4 43 41.7 43 44.6C43 47.5 40.1 49.8 36.5 49.8H21" stroke="white" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M25.5 45.5L20.5 49.8L25.5 54" stroke="white" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="49.5" cy="14.5" r="3.5" fill="#A5F3FC"/>
+  <g transform="translate(4 -1) scale(1.5)">
+    <path d="M18.4 11H41.4C44 11 46.4 12.4 47.7 14.7L53 23.9C54 25.7 54 27.9 53 29.7L41 50.5H28.8L42.4 27H11.3L18.4 11Z" fill="url(#logo-top)"/>
+    <path d="M13.5 25.8H35.7L30.2 35.3H21.2L28.7 48.4H44.2L37.8 59.5H25.6C22.9 59.5 20.5 58.1 19.1 55.8L9.8 39.6C8.5 37.4 8.5 34.7 9.8 32.5L13.5 25.8Z" fill="url(#logo-left)"/>
+    <path d="M49.6 26.6L56 37.6L43.4 59.5H30.7L49.6 26.6Z" fill="url(#logo-right)"/>
   </g>
-  <text x="108" y="63" fill="#18171D" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="46" font-weight="750" letter-spacing="-2.2">SellFlow</text>
+  <text x="108" y="63" fill="#18171D" font-family="Plus Jakarta Sans, Inter, Arial, sans-serif" font-size="46" font-weight="750" letter-spacing="-2.2">Sell<tspan fill="#7C3AED">tify</tspan></text>
 </svg>

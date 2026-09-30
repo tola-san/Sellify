@@ -123,7 +123,7 @@ export function NotificationsPage() {
           </div>
           <h1 className="mt-2 text-2xl font-bold tracking-tight text-slate-950 sm:text-3xl">Notifications</h1>
           <p className="mt-1 text-sm text-slate-500">
-            Orders, inventory risks, and important SellFlow updates in one place.
+            Orders, inventory risks, and important Selltify updates in one place.
           </p>
         </div>
         <button

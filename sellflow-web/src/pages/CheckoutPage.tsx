@@ -155,7 +155,7 @@ export function CheckoutPage() {
           <p className="mt-3 text-slate-600">Thank you, <strong>{order.customer_name}</strong>!</p>
           <p className="mt-1 text-sm text-slate-500">
             {order.telegram_receipt_sent
-              ? "Your receipt was sent by the SellFlow Telegram bot. We will message you when the order status changes."
+              ? "Your receipt was sent by the Selltify Telegram bot. We will message you when the order status changes."
               : "Your order is confirmed. Choose Telegram below for instant receipt and live status updates."}
           </p>
 

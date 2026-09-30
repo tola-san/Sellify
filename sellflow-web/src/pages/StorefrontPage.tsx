@@ -43,7 +43,7 @@ export function StorefrontPage() {
     setLoadFailed(false);
     storefrontService.getStore(slug).then((data) => {
       setStorefront(data);
-      document.title = `${data.business.name} · SellFlow`;
+      document.title = `${data.business.name} · Selltify`;
     }).catch((error: unknown) => {
       if (axios.isAxiosError(error) && error.response?.status === 404) {
         setMissing(true);
@@ -51,7 +51,7 @@ export function StorefrontPage() {
       }
       setLoadFailed(true);
     });
-    return () => { document.title = "SellFlow"; };
+    return () => { document.title = "Selltify"; };
   }, [slug]);
 
   useEffect(() => {
@@ -374,7 +374,7 @@ export function StorefrontPage() {
 
       <footer className="mt-16 border-t py-8 text-center text-sm" style={{ borderColor: `${theme.muted_color}35`, backgroundColor: theme.surface_color, color: theme.muted_color }}>
         <span className={isKhmerTheme ? "khmer-footer-signature" : undefined}>
-          © {new Date().getFullYear()} {business.name} · Built with SellFlow
+          © {new Date().getFullYear()} {business.name} · Built with Selltify
         </span>
       </footer>
 
@@ -555,7 +555,7 @@ function ProductCard({ product, theme, currency, onAdd, gallery = false, gallery
 
 function NotFound() {
   const { isMiniAppRoute } = useTelegramMiniApp();
-  return <div className="grid min-h-screen place-items-center bg-slate-50 p-6 text-center"><div><span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-slate-200 text-slate-500"><Store size={30} /></span><h1 className="mt-5 text-2xl font-bold">Store not found</h1><p className="mt-2 text-slate-500">This store does not exist or is currently unavailable.</p><Link to={isMiniAppRoute ? "/telegram/store" : "/"} className="mt-6 inline-block rounded-lg bg-purple-600 px-5 py-3 text-sm font-semibold text-white">{isMiniAppRoute ? "Back" : "Go to SellFlow"}</Link></div></div>;
+  return <div className="grid min-h-screen place-items-center bg-slate-50 p-6 text-center"><div><span className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-slate-200 text-slate-500"><Store size={30} /></span><h1 className="mt-5 text-2xl font-bold">Store not found</h1><p className="mt-2 text-slate-500">This store does not exist or is currently unavailable.</p><Link to={isMiniAppRoute ? "/telegram/store" : "/"} className="mt-6 inline-block rounded-lg bg-purple-600 px-5 py-3 text-sm font-semibold text-white">{isMiniAppRoute ? "Back" : "Go to Selltify"}</Link></div></div>;
 }
 
 function StoreUnavailable() {

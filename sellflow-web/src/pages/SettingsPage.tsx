@@ -56,7 +56,7 @@ export function SettingsPage() {
         <p className="text-xs font-semibold text-violet-600">Workspace preferences</p>
         <h1 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-slate-950 sm:text-3xl">Settings</h1>
         <p className="mt-1.5 max-w-2xl text-sm leading-6 text-slate-500">
-          Manage your SellFlow account, workspace appearance, notifications, and security.
+          Manage your Selltify account, workspace appearance, notifications, and security.
         </p>
       </header>
 
@@ -144,7 +144,7 @@ function AccountSettings() {
     <div className="space-y-5">
       <SettingsPanel
         title="Personal profile"
-        description="This information identifies you inside your SellFlow workspace."
+        description="This information identifies you inside your Selltify workspace."
         icon={<UserRound className="h-4 w-4" />}
       >
         <ErrorMessage error={error} />
@@ -226,7 +226,7 @@ function AppearanceSettings() {
   return (
     <SettingsPanel
       title="Dashboard appearance"
-      description="Choose how your private SellFlow workspace looks. Your public storefront is not affected."
+      description="Choose how your private Selltify workspace looks. Your public storefront is not affected."
       icon={<Monitor className="h-4 w-4" />}
     >
       <div className="grid gap-3 min-[480px]:grid-cols-2 xl:grid-cols-3">
@@ -313,7 +313,7 @@ function NotificationSettings() {
 
       <SettingsPanel
         title="Delivery status"
-        description="SellFlow keeps in-app notifications available even when an external channel is disconnected."
+        description="Selltify keeps in-app notifications available even when an external channel is disconnected."
         icon={<ShieldCheck className="h-4 w-4" />}
       >
         <div className="mb-5 flex flex-col gap-4 rounded-xl border border-slate-200 bg-slate-50/70 p-4 sm:flex-row sm:items-center sm:justify-between">
@@ -436,7 +436,7 @@ function SecuritySettings() {
 
       <SettingsPanel
         title="Account protection"
-        description="Current security status for your SellFlow account."
+        description="Current security status for your Selltify account."
         icon={<ShieldCheck className="h-4 w-4" />}
       >
         <div className="flex items-start gap-3 rounded-xl border border-emerald-200 bg-emerald-50 p-4">

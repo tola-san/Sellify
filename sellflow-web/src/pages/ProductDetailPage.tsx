@@ -38,7 +38,7 @@ export function ProductDetailPage() {
       })
       .catch(() => setMissing(true));
 
-    return () => { document.title = "SellFlow"; };
+    return () => { document.title = "Selltify"; };
   }, [slug, productSlug]);
 
   useEffect(() => {

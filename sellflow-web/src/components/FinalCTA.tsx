@@ -48,7 +48,7 @@ export function FinalCTA() {
 
                 <p className="text-xl md:text-2xl text-zinc-600 max-w-2xl mx-auto mb-12">
                   Join thousands of growing businesses using{" "}
-                  <span className="font-semibold text-brand">SellFlow</span>. 
+                  <span className="font-semibold text-brand">Selltify</span>.
                   Powerful tools. Simple setup. Real results.
                 </p>
 

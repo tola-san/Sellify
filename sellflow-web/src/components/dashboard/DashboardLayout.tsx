@@ -371,7 +371,7 @@ export function DashboardLayout() {
             )}
             {!isCollapsed && (
               <div className="min-w-0">
-                <p className="truncate text-sm font-bold text-slate-900">{business?.name ?? "SellFlow"}</p>
+                <p className="truncate text-sm font-bold text-slate-900">{business?.name ?? "Selltify"}</p>
                 <p className="truncate text-[11px] text-slate-500">
                   {business?.business_type ? businessTypeLabel(business.business_type) : "Business dashboard"}
                 </p>
@@ -536,7 +536,7 @@ export function DashboardLayout() {
               <Menu size={20} />
             </button>
             <p className="truncate text-sm font-semibold sm:text-base">
-              <span className="sm:hidden">{business?.name || "SellFlow"}</span>
+              <span className="sm:hidden">{business?.name || "Selltify"}</span>
               <span className="hidden sm:inline">{business ? `Manage ${business.name}` : "Manage your catalog"}</span>
             </p>
           </div>

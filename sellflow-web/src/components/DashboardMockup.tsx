@@ -37,7 +37,7 @@ export function DashboardMockup() {
                 <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
                   <ShoppingBag className="w-5 h-5 text-white" />
                 </div>
-                <div className="font-semibold text-zinc-900">SellFlow</div>
+                <div className="font-semibold text-zinc-900">Selltify</div>
               </div>
 
               <div className="space-y-1">
