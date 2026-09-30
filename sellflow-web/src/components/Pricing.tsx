@@ -16,6 +16,7 @@ import {
   type BillingCycle,
   type SubscriptionPlan,
 } from "../Services/billing";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const fallbackPlans: SubscriptionPlan[] = [
   { id: -1, name: "Starter", slug: "starter", description: "Essential selling tools for independent shops starting online.", monthly_price: "3.00", yearly_price: "30.00", currency: "USD", limits: { businesses: 1, staff: 1, products: 100 }, features: { inventory: "basic", telegram_notifications: true, restaurant_qr: false, analytics_history_days: 30, custom_domain: false, priority_support: false }, is_popular: false },
@@ -25,6 +26,7 @@ const fallbackPlans: SubscriptionPlan[] = [
 
 export function Pricing() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [cycle, setCycle] = useState<BillingCycle>("monthly");
   const [plans, setPlans] = useState<SubscriptionPlan[]>([]);
   const [loading, setLoading] = useState(true);
@@ -59,13 +61,13 @@ export function Pricing() {
         <motion.div initial={{ opacity: 0, y: 22 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-lg border border-[#ded6f5] bg-white px-3 py-1.5 text-[10px] font-semibold text-[#6954d0] shadow-sm">
             <Sparkles className="h-3.5 w-3.5" />
-            30-day Business trial
+            {t("30-day Business trial")}
           </div>
           <h2 className="mt-5 text-4xl font-medium leading-[1.06] tracking-[-.05em] text-[#18171d] md:text-6xl">
-            Simple pricing.<br /><span className="text-[#735bd6]">Built to grow with you.</span>
+            {t("Simple pricing.")}<br /><span className="text-[#735bd6]">{t("Built to grow with you.")}</span>
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#746f7b] sm:text-base">
-            Explore every Business feature for 30 days. No card required, no setup fee, and your business data stays yours.
+            {t("Explore every Business feature for 30 days. No card required, no setup fee, and your business data stays yours.")}
           </p>
           <CycleToggle cycle={cycle} onChange={setCycle} />
         </motion.div>
@@ -85,13 +87,13 @@ export function Pricing() {
           </div>
         )}
 
-        {error && <button type="button" onClick={loadPlans} className="mx-auto mt-5 flex items-center gap-2 text-xs font-medium text-[#746f7b] transition hover:text-[#6954d0]"><RefreshCw className="h-3.5 w-3.5" /> Refresh live pricing</button>}
+        {error && <button type="button" onClick={loadPlans} className="mx-auto mt-5 flex items-center gap-2 text-xs font-medium text-[#746f7b] transition hover:text-[#6954d0]"><RefreshCw className="h-3.5 w-3.5" /> {t("Refresh live pricing")}</button>}
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-slate-500">
           {["No card required", "Cancel anytime", "Data preserved after expiry"].map((item) => (
             <span key={item} className="flex items-center gap-2">
               <BadgeCheck className="h-4 w-4 text-emerald-600" />
-              {item}
+              {t(item)}
             </span>
           ))}
         </div>
@@ -99,7 +101,7 @@ export function Pricing() {
         <div className="mx-auto mt-8 flex max-w-2xl items-start gap-3 rounded-xl border border-[#ddd4f4] bg-white/75 px-4 py-3.5 text-left shadow-sm backdrop-blur">
           <Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-[#7058d4]" />
           <p className="text-xs leading-5 text-[#514565]">
-            Your trial begins with <strong>Business</strong>. After 30 days, select Starter, Business, or Pro to keep full access.
+            {t("Your trial begins with")} <strong>Business</strong>. {t("After 30 days, select Starter, Business, or Pro to keep full access.")}
           </p>
         </div>
       </div>
@@ -116,6 +118,7 @@ function PlanCard({
   cycle: BillingCycle;
   onStart: () => void;
 }) {
+  const { t } = useLanguage();
   const yearly = cycle === "yearly";
   const price = Number(yearly ? plan.yearly_price : plan.monthly_price);
   const features = planFeatures(plan);
@@ -131,7 +134,7 @@ function PlanCard({
     >
       {plan.is_popular && (
         <span className="absolute right-5 top-5 rounded-lg bg-[#6c55d2]/50 outline-dashed outline-1 outline-[#6c55d2] px-3 py-1 text-[9px] font-bold uppercase tracking-[0.12em] text-white shadow-lg shadow-violet-200">
-          Most popular
+          {t("Most popular")}
         </span>
       )}
 
@@ -161,16 +164,16 @@ function PlanCard({
             : "border border-[#ded9e7] text-[#27232d] hover:border-[#c7bae0] hover:bg-[#f8f5fc]"
         }`}
       >
-        Start 30-day free trial
+        {t("Start 30-day free trial")}
         <ArrowRight className="h-4 w-4" />
       </button>
 
       <div className="my-6 border-t border-slate-100" />
 
       <div className="mb-4 grid grid-cols-3 gap-2">
-        <PlanLimit label="Businesses" value={limitLabel(plan.limits.businesses)} />
-        <PlanLimit label="Staff" value={limitLabel(plan.limits.staff)} />
-        <PlanLimit label="Products" value={limitLabel(plan.limits.products)} />
+        <PlanLimit label={t("Businesses")} value={limitLabel(plan.limits.businesses)} />
+        <PlanLimit label={t("Staff")} value={limitLabel(plan.limits.staff)} />
+        <PlanLimit label={t("Products")} value={limitLabel(plan.limits.products)} />
       </div>
 
       <ul className="flex-1 space-y-3">
@@ -205,6 +208,7 @@ function CycleToggle({
   cycle: BillingCycle;
   onChange: (cycle: BillingCycle) => void;
 }) {
+  const { t } = useLanguage();
   return (
     <div className="mt-7 inline-flex rounded-xl border border-[#ded9e8] bg-white p-1 shadow-sm">
       {(["monthly", "yearly"] as const).map((option) => (
@@ -216,10 +220,10 @@ function CycleToggle({
             cycle === option ? "bg-[#6c55d2] text-white shadow-sm" : "text-slate-500 hover:bg-[#f4f0fa]"
           }`}
         >
-          {option}
+          {t(option === "monthly" ? "Monthly" : "Yearly")}
           {option === "yearly" && (
             <span className={`ml-1.5 text-[9px] ${cycle === option ? "text-emerald-400" : "text-emerald-600"}`}>
-              Save 17%
+              {t("Save 17%")}
             </span>
           )}
         </button>

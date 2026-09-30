@@ -30,6 +30,7 @@ import { useAuth } from "./Auth/AuthContext";
 import { Pricing } from "./Pricing";
 import { BrandLogo } from "./ui/BrandLogo";
 import { Marquee } from "./ui/marquee";
+import { useLanguage } from "../i18n/LanguageContext";
 import "./landing.css";
 
 type HeroView = "orders" | "products" | "analytics";
@@ -69,6 +70,7 @@ const reveal = {
 
 export function ModernLanding() {
   const { openAuth } = useAuth();
+  const { t } = useLanguage();
   const [heroView, setHeroView] = useState<HeroView>("orders");
   const [openFaq, setOpenFaq] = useState(0);
 
@@ -77,24 +79,24 @@ export function ModernLanding() {
       <section id="home" className="mondai-hero relative overflow-hidden px-5 pb-16 pt-32 sm:px-8 sm:pt-36">
         <div className="mx-auto max-w-5xl text-center">
           <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="mondai-pill">
-            <Sparkles className="h-3 w-3" /> Built for local businesses in Cambodia
+            <Sparkles className="h-3 w-3" /> {t("Built for local businesses in Cambodia")}
           </motion.div>
           <motion.h1 initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7 }} className="mx-auto mt-6 max-w-3xl text-[2.55rem] font-semibold leading-[1.02] tracking-[-.055em] sm:text-6xl">
-            Your complete selling workflow, <span className="text-[#7557e8]">ready in minutes.</span>
+            {t("Your complete selling workflow,")} <span className="text-[#7557e8]">{t("ready in minutes.")}</span>
           </motion.h1>
           <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: .12 }} className="mx-auto mt-5 max-w-xl text-sm leading-6 text-[#746e7b]">
-            Publish a branded mobile storefront, accept guest orders, manage stock and fulfillment, and stay updated through Telegram—all from one dashboard.
+            {t("Publish a branded mobile storefront, accept guest orders, manage stock and fulfillment, and stay updated through Telegram—all from one dashboard.")}
           </motion.p>
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: .2 }} className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <button type="button" onClick={() => openAuth("register")} className="mondai-primary">Start 30-day free trial <ArrowRight className="h-4 w-4" /></button>
-            <a href="#features" className="mondai-link">See what is included</a>
+            <button type="button" onClick={() => openAuth("register")} className="mondai-primary">{t("Start 30-day free trial")} <ArrowRight className="h-4 w-4" /></button>
+            <a href="#features" className="mondai-link">{t("See what is included")}</a>
           </motion.div>
-          <p className="mt-3 text-[11px] text-[#96909c]">No card required · Plans from $3/month after your trial</p>
+          <p className="mt-3 text-[11px] text-[#96909c]">{t("No card required · Plans from $3/month after your trial")}</p>
 
           <div className="mx-auto mt-9 flex w-fit rounded-lg border border-[#e8e3ee] bg-white p-1 shadow-sm">
             {(["orders", "products", "analytics"] as HeroView[]).map((view) => (
               <button key={view} type="button" onClick={() => setHeroView(view)} className={`relative isolate rounded-md px-4 py-2 text-[11px] font-semibold capitalize transition ${heroView === view ? "text-[#6045b1]" : "text-[#98919f]"}`}>
-                {heroView === view && <motion.span layoutId="landing-tab" className="absolute inset-0 -z-10 rounded-md bg-[#f0ebff]" />}{view}
+                {heroView === view && <motion.span layoutId="landing-tab" className="absolute inset-0 -z-10 rounded-md bg-[#f0ebff]" />}{t(view === "orders" ? "Orders" : view === "products" ? "Products" : "Analytics")}
               </button>
             ))}
           </div>
@@ -108,14 +110,14 @@ export function ModernLanding() {
       <section id="how-it-works" className="mondai-section px-5 sm:px-8">
         <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-[.82fr_1.18fr]">
           <motion.div {...reveal}>
-            <SectionTag>Simple setup</SectionTag>
-            <h2 className="mondai-heading mt-4">Go from idea to taking orders in three steps.</h2>
+            <SectionTag>{t("Simple setup")}</SectionTag>
+            <h2 className="mondai-heading mt-4">{t("Go from idea to taking orders in three steps.")}</h2>
             <div className="mt-8 divide-y divide-[#e8e4ec] border-y border-[#e8e4ec]">
               {[
                 ["01", "Create your space", "Add your business details, brand, products, and prices."],
                 ["02", "Publish and share", "Share your storefront link or restaurant table QR codes."],
                 ["03", "Manage every order", "Track payment, fulfillment, inventory, and customer updates."],
-              ].map(([number, title, copy]) => <div key={number} className="grid grid-cols-[40px_1fr] gap-3 py-5"><span className="text-xs font-semibold text-[#8b6fea]">{number}</span><div><h3 className="text-sm font-semibold">{title}</h3><p className="mt-1 text-xs leading-5 text-[#7d7683]">{copy}</p></div></div>)}
+              ].map(([number, title, copy]) => <div key={number} className="grid grid-cols-[40px_1fr] gap-3 py-5"><span className="text-xs font-semibold text-[#8b6fea]">{number}</span><div><h3 className="text-sm font-semibold">{t(title)}</h3><p className="mt-1 text-xs leading-5 text-[#7d7683]">{t(copy)}</p></div></div>)}
             </div>
           </motion.div>
           <motion.div {...reveal} className="mondai-soft-panel p-5 sm:p-7">
@@ -127,16 +129,16 @@ export function ModernLanding() {
       <section id="features" className="mondai-section px-5 sm:px-8">
         <div className="mx-auto max-w-5xl">
           <motion.div {...reveal} className="mx-auto max-w-2xl text-center">
-            <SectionTag>One connected workflow</SectionTag>
-            <h2 className="mondai-heading mt-4">Everything you need to sell online.</h2>
-            <p className="mondai-copy mx-auto mt-4 max-w-xl">Simple tools for the customer-facing store and the day-to-day work behind every order.</p>
+            <SectionTag>{t("One connected workflow")}</SectionTag>
+            <h2 className="mondai-heading mt-4">{t("Everything you need to sell online.")}</h2>
+            <p className="mondai-copy mx-auto mt-4 max-w-xl">{t("Simple tools for the customer-facing store and the day-to-day work behind every order.")}</p>
           </motion.div>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {features.map(({ icon: Icon, title, copy }, index) => (
               <motion.article key={title} {...reveal} transition={{ ...reveal.transition, delay: index * .04 }} className="mondai-feature-card group">
                 <span className="mondai-icon"><Icon className="h-4 w-4" /></span>
-                <h3 className="mt-5 text-base font-semibold tracking-[-.02em]">{title}</h3>
-                <p className="mt-2 text-xs leading-5 text-[#7a7480]">{copy}</p>
+                <h3 className="mt-5 text-base font-semibold tracking-[-.02em]">{t(title)}</h3>
+                <p className="mt-2 text-xs leading-5 text-[#7a7480]">{t(copy)}</p>
               </motion.article>
             ))}
           </div>
@@ -146,16 +148,16 @@ export function ModernLanding() {
       <section className="mondai-tools px-5 py-24 sm:px-8 lg:py-28">
         <div className="mx-auto max-w-5xl">
           <motion.div {...reveal} className="mx-auto max-w-2xl text-center">
-            <SectionTag>Customer to fulfillment</SectionTag>
-            <h2 className="mondai-heading mt-4">Unlock productivity with smart sales tools.</h2>
-            <p className="mondai-copy mx-auto mt-4 max-w-xl">Selltify removes repetitive work between a customer discovering an item and your team completing the order.</p>
+            <SectionTag>{t("Customer to fulfillment")}</SectionTag>
+            <h2 className="mondai-heading mt-4">{t("Unlock productivity with smart sales tools.")}</h2>
+            <p className="mondai-copy mx-auto mt-4 max-w-xl">{t("Selltify removes repetitive work between a customer discovering an item and your team completing the order.")}</p>
           </motion.div>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <ToolCard title="Branded storefront" copy="A fast, mobile-first catalog with guest checkout." icon={Smartphone}><MiniStore /></ToolCard>
-            <ToolCard title="Telegram Mini App" copy="A familiar shopping experience inside Telegram." icon={Send}><TelegramCard /></ToolCard>
-            <ToolCard title="Order automation" copy="Clear statuses and notifications for every step." icon={BellRing}><StatusFlow /></ToolCard>
-            <ToolCard title="Inventory awareness" copy="Availability and stock stay connected to orders." icon={PackageCheck}><StockList /></ToolCard>
-            <ToolCard title="Simple reporting" copy="Know what is selling and what needs attention." icon={BarChart3}><MiniChart /></ToolCard>
+            <ToolCard title={t("Branded storefront")} copy={t("A fast, mobile-first catalog with guest checkout.")} icon={Smartphone}><MiniStore /></ToolCard>
+            <ToolCard title="Telegram Mini App" copy={t("A familiar shopping experience inside Telegram.")} icon={Send}><TelegramCard /></ToolCard>
+            <ToolCard title={t("Order automation")} copy={t("Clear statuses and notifications for every step.")} icon={BellRing}><StatusFlow /></ToolCard>
+            <ToolCard title={t("Inventory awareness")} copy={t("Availability and stock stay connected to orders.")} icon={PackageCheck}><StockList /></ToolCard>
+            <ToolCard title={t("Simple reporting")} copy={t("Know what is selling and what needs attention.")} icon={BarChart3}><MiniChart /></ToolCard>
           </div>
         </div>
       </section>
@@ -163,10 +165,10 @@ export function ModernLanding() {
       <section className="mondai-section px-5 sm:px-8">
         <div className="mx-auto grid max-w-5xl items-center gap-12 lg:grid-cols-[.9fr_1.1fr]">
           <motion.div {...reveal}>
-            <SectionTag>Guest ordering</SectionTag>
-            <h2 className="mondai-heading mt-4">A storefront that feels effortless on web and Telegram.</h2>
-            <p className="mondai-copy mt-5 max-w-md">Customers can browse and order without a Selltify account. Your catalog, stock, and order queue stay consistent across every entry point.</p>
-            <button type="button" onClick={() => openAuth("register")} className="mondai-primary mt-7">Explore Selltify <ArrowRight className="h-4 w-4" /></button>
+            <SectionTag>{t("Guest ordering")}</SectionTag>
+            <h2 className="mondai-heading mt-4">{t("A storefront that feels effortless on web and Telegram.")}</h2>
+            <p className="mondai-copy mt-5 max-w-md">{t("Customers can browse and order without a Selltify account. Your catalog, stock, and order queue stay consistent across every entry point.")}</p>
+            <button type="button" onClick={() => openAuth("register")} className="mondai-primary mt-7">{t("Explore Selltify")} <ArrowRight className="h-4 w-4" /></button>
           </motion.div>
           <motion.div {...reveal} className="mondai-soft-panel overflow-hidden p-5 sm:p-7"><GuestChannelsMockup /></motion.div>
         </div>
@@ -178,17 +180,17 @@ export function ModernLanding() {
 
       <section id="faq" className="mondai-section px-5 pb-28 sm:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <SectionTag>Frequently asked questions</SectionTag>
-          <h2 className="mondai-heading mt-4">Getting started, answered.</h2>
-          <p className="mondai-copy mt-3">Everything you need to know before opening your first Selltify store.</p>
+          <SectionTag>{t("Frequently asked questions")}</SectionTag>
+          <h2 className="mondai-heading mt-4">{t("Getting started, answered.")}</h2>
+          <p className="mondai-copy mt-3">{t("Everything you need to know before opening your first Selltify store.")}</p>
         </div>
         <div className="mx-auto mt-10 max-w-4xl divide-y divide-[#e5e1e9] border-y border-[#e5e1e9]">
           {faqs.map(([question, answer], index) => (
             <div key={question}>
               <button type="button" onClick={() => setOpenFaq(openFaq === index ? -1 : index)} className="flex w-full items-center justify-between gap-6 py-5 text-left text-sm font-semibold">
-                <span>{question}</span><ChevronDown className={`h-4 w-4 shrink-0 text-[#7557e8] transition ${openFaq === index ? "rotate-180" : ""}`} />
+                <span>{t(question)}</span><ChevronDown className={`h-4 w-4 shrink-0 text-[#7557e8] transition ${openFaq === index ? "rotate-180" : ""}`} />
               </button>
-              <AnimatePresence initial={false}>{openFaq === index && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden"><p className="max-w-2xl pb-5 text-xs leading-6 text-[#77717d]">{answer}</p></motion.div>}</AnimatePresence>
+              <AnimatePresence initial={false}>{openFaq === index && <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden"><p className="max-w-2xl pb-5 text-xs leading-6 text-[#77717d]">{t(answer)}</p></motion.div>}</AnimatePresence>
             </div>
           ))}
         </div>
@@ -268,15 +270,17 @@ function GuestChannelsMockup() {
 function StorefrontTile() { return <div className="pt-3"><div className="rounded-lg bg-[#7557e8] p-3 text-white"><p className="text-[9px] font-semibold">Bloom Café</p><p className="mt-1 text-[7px] text-white/70">Good food, ready when you are.</p></div><div className="mt-2 grid grid-cols-2 gap-2">{["Bowl", "Burger", "Coffee", "Cake"].map((x,i) => <div key={x} className="rounded-md bg-[#f6f2fa] p-2"><span className={`block aspect-square rounded ${i%2?"bg-cyan-50":"bg-violet-100"}`} /><p className="mt-1 text-[7px] font-semibold">{x}</p></div>)}</div></div>; }
 
 function Integrations() {
+  const { t } = useLanguage();
   const items = [[Send,"Telegram"],[QrCode,"QR ordering"],[Globe2,"Web storefront"],[CircleDollarSign,"Payments"],[MessageCircleMore,"Customer updates"],[LayoutDashboard,"Dashboard"],[Palette,"Store themes"],[UsersRound,"Team access"]] as const;
-  return <section className="px-5 py-10 sm:px-8"><motion.div {...reveal} className="mondai-integration mx-auto max-w-5xl px-6 py-16 text-center sm:px-10"><div className="mx-auto flex max-w-xl flex-wrap justify-center gap-3">{items.map(([Icon,label],index)=><motion.span key={label} animate={{y:[0,index%2?-4:4,0]}} transition={{duration:4+index*.2,repeat:Infinity,ease:"easeInOut"}} className="grid h-12 w-12 place-items-center rounded-full border border-[#ddd5e8] bg-white text-[#7a5bd8] shadow-sm" aria-label={label}><Icon className="h-4 w-4" /></motion.span>)}</div><div className="mt-8"><SectionTag>Connected by design</SectionTag></div><h2 className="mondai-heading mx-auto mt-4 max-w-xl">Your essential selling tools, working together.</h2><p className="mondai-copy mx-auto mt-4 max-w-lg">Storefront, customer communication, operations, and reporting stay in one Selltify workflow.</p></motion.div></section>;
+  return <section className="px-5 py-10 sm:px-8"><motion.div {...reveal} className="mondai-integration mx-auto max-w-5xl px-6 py-16 text-center sm:px-10"><div className="mx-auto flex max-w-xl flex-wrap justify-center gap-3">{items.map(([Icon,label],index)=><motion.span key={label} animate={{y:[0,index%2?-4:4,0]}} transition={{duration:4+index*.2,repeat:Infinity,ease:"easeInOut"}} className="grid h-12 w-12 place-items-center rounded-full border border-[#ddd5e8] bg-white text-[#7a5bd8] shadow-sm" aria-label={label}><Icon className="h-4 w-4" /></motion.span>)}</div><div className="mt-8"><SectionTag>{t("Connected by design")}</SectionTag></div><h2 className="mondai-heading mx-auto mt-4 max-w-xl">{t("Your essential selling tools, working together.")}</h2><p className="mondai-copy mx-auto mt-4 max-w-lg">{t("Storefront, customer communication, operations, and reporting stay in one Selltify workflow.")}</p></motion.div></section>;
 }
 
 function Testimonials() {
+  const { t } = useLanguage();
   const firstRow = testimonials.slice(0, 3);
   const secondRow = testimonials.slice(3);
 
-  return <section className="mondai-section overflow-hidden px-5 sm:px-8"><div className="mx-auto max-w-5xl"><div className="text-center"><SectionTag>Customer stories</SectionTag><h2 className="mondai-heading mt-4">Built for real local businesses.</h2><p className="mondai-copy mt-3">How sellers use Selltify to make everyday work simpler.</p></div><motion.div {...reveal} className="relative mt-10 overflow-hidden"><Marquee pauseOnHover repeat={4} className="[--duration:42s]">{firstRow.map(item=><TestimonialCard key={item.name} item={item} />)}</Marquee><Marquee reverse pauseOnHover repeat={4} className="mt-2 [--duration:46s]">{secondRow.map(item=><TestimonialCard key={item.name} item={item} />)}</Marquee><div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent sm:w-28" /><div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent sm:w-28" /></motion.div></div></section>;
+  return <section className="mondai-section overflow-hidden px-5 sm:px-8"><div className="mx-auto max-w-5xl"><div className="text-center"><SectionTag>{t("Customer stories")}</SectionTag><h2 className="mondai-heading mt-4">{t("Built for real local businesses.")}</h2><p className="mondai-copy mt-3">{t("How sellers use Selltify to make everyday work simpler.")}</p></div><motion.div {...reveal} className="relative mt-10 overflow-hidden"><Marquee pauseOnHover repeat={4} className="[--duration:42s]">{firstRow.map(item=><TestimonialCard key={item.name} item={item} />)}</Marquee><Marquee reverse pauseOnHover repeat={4} className="mt-2 [--duration:46s]">{secondRow.map(item=><TestimonialCard key={item.name} item={item} />)}</Marquee><div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent sm:w-28" /><div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent sm:w-28" /></motion.div></div></section>;
 }
 
 function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {

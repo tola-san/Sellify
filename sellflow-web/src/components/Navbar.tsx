@@ -4,6 +4,8 @@ import { ArrowRight, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "./Auth/AuthContext";
 import { BrandLogo } from "./ui/BrandLogo";
+import { LanguageSwitch } from "./ui/LanguageSwitch";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const navLinks = [
   { name: "Product", href: "#features" },
@@ -14,6 +16,7 @@ const navLinks = [
 
 export function Navbar() {
   const { openAuth } = useAuth();
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -55,14 +58,15 @@ export function Navbar() {
               href={link.href}
               className="rounded-md px-3 py-2 text-[11px] font-medium text-slate-600 transition hover:bg-[#f3edfa] hover:text-[#7543bd]"
             >
-              {link.name}
+              {t(link.name)}
             </a>
           ))}
         </nav>
 
         <div className="hidden items-center gap-2 sm:flex">
+          <LanguageSwitch compact />
           <button onClick={() => openAuth("login")} className="rounded-lg border border-gray-200 px-3 py-2 text-[11px] font-semibold text-slate-700 transition hover:bg-[#f6f3f9]">
-            Sign in
+            {t("Sign in")}
           </button>
           <motion.button
             whileHover={{ y: -2 }}
@@ -70,7 +74,7 @@ export function Navbar() {
             onClick={() => openAuth("register")}
             className="group inline-flex h-9 items-center gap-2 rounded-lg bg-[#7557e8] px-4 text-[11px] font-semibold text-white shadow-[0_8px_18px_-10px_rgba(78,51,166,.7)] transition hover:bg-[#6549d3]"
           >
-            <span>Start trial</span><ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+            <span>{t("Start trial")}</span><ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </motion.button>
         </div>
 
@@ -96,13 +100,16 @@ export function Navbar() {
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <a key={link.href} href={link.href} onClick={() => setMobileOpen(false)} className="rounded-lg px-3 py-3 text-sm font-semibold text-slate-700 hover:bg-violet-50">
-                  {link.name}
+                  {t(link.name)}
                 </a>
               ))}
             </nav>
-            <div className="mt-3 grid grid-cols-2 gap-2 border-t border-slate-100 pt-3">
-              <button onClick={() => { setMobileOpen(false); openAuth("login"); }} className="rounded-lg border border-zinc-200 px-2 py-2 text-sm font-semibold">Sign in</button>
-              <button onClick={() => { setMobileOpen(false); openAuth("register"); }} className="rounded-lg mondai-primary px-2 py-2 text-sm font-semibold text-white">Start trial</button>
+            <div className="mt-3 flex items-center justify-between border-t border-slate-100 pt-3">
+              <LanguageSwitch />
+            </div>
+            <div className="mt-3 grid grid-cols-2 gap-2">
+              <button onClick={() => { setMobileOpen(false); openAuth("login"); }} className="rounded-lg border border-zinc-200 px-2 py-2 text-sm font-semibold">{t("Sign in")}</button>
+              <button onClick={() => { setMobileOpen(false); openAuth("register"); }} className="rounded-lg mondai-primary px-2 py-2 text-sm font-semibold text-white">{t("Start trial")}</button>
             </div>
           </motion.div>
         )}
