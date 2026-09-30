@@ -7,7 +7,7 @@ const faqs = [
   {
     question: 'Can I connect with Facebook?',
     answer:
-      'Yes! SellFlow integrates seamlessly with Facebook, Instagram, and TikTok. You can manage all orders from these platforms in a single dashboard.',
+      'Yes! Selltify integrates seamlessly with Facebook, Instagram, and TikTok. You can manage all orders from these platforms in a single dashboard.',
   },
   {
     question: 'Can I receive notifications via Telegram?',
@@ -17,7 +17,7 @@ const faqs = [
   {
     question: 'Do I need technical knowledge?',
     answer:
-      'Not at all. SellFlow is designed for non-tech users. If you can use social media, you can use SellFlow. Setting up your store takes less than 5 minutes.',
+      'Not at all. Selltify is designed for non-tech users. If you can use social media, you can use Selltify. Setting up your store takes less than 5 minutes.',
   },
   {
     question: 'Is there a free trial?',
@@ -42,7 +42,7 @@ export function FAQ() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-brand-muted">
-              Everything you need to know about SellFlow
+              Everything you need to know about Selltify
             </p>
           </FadeIn>
         </div>

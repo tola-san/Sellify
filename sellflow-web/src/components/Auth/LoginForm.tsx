@@ -77,7 +77,7 @@ export function LoginForm({ onSwitch }: LoginFormProps) {
         </h2>
 
         <p className="text-sm text-muted mt-1">
-          Sign in to manage your SellFlow catalog.
+          Sign in to manage your Selltify catalog.
         </p>
       </div>
 

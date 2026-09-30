@@ -16,7 +16,7 @@ export function Testimonials() {
       business: "ហាងលក់សម្លៀកបំពាក់អនឡាញ នារីស្អាត",
       image: "https://i.pravatar.cc/150?img=44",
       quote:
-        "SellFlow ជួយសម្រួលការលក់លើ Facebook របស់ខ្ញុំខ្លាំងណាស់! ឥឡូវគ្រាន់តែផ្ញើ Link កាតាឡុកទៅ ភ្ញៀវអាចមើលម៉ូដ និងតម្លៃបានភ្លាមៗ។",
+        "Selltify ជួយសម្រួលការលក់លើ Facebook របស់ខ្ញុំខ្លាំងណាស់! ឥឡូវគ្រាន់តែផ្ញើ Link កាតាឡុកទៅ ភ្ញៀវអាចមើលម៉ូដ និងតម្លៃបានភ្លាមៗ។",
     },
     {
       name: "ចាន់ដារ៉ា",
@@ -37,7 +37,7 @@ export function Testimonials() {
       business: "ហាងទូរស័ព្ទអនឡាញ",
       image: "https://i.pravatar.cc/150?img=32",
       quote:
-        "SellFlow ធ្វើឲ្យការលក់តាម Chat កាន់តែងាយ។ ខ្ញុំអាចផ្ញើ Link ផលិតផលទៅអតិថិជន ហើយទទួល Order បានលឿនជាងមុន។",
+        "Selltify ធ្វើឲ្យការលក់តាម Chat កាន់តែងាយ។ ខ្ញុំអាចផ្ញើ Link ផលិតផលទៅអតិថិជន ហើយទទួល Order បានលឿនជាងមុន។",
     },
   ];
 
@@ -62,7 +62,7 @@ export function Testimonials() {
           </motion.h2>
 
           <p className="text-base text-zinc-600 sm:text-lg">
-            បទពិសោធន៍ពិតៗពីអ្នកលក់ដែលបានផ្លាស់ប្តូរមកប្រើប្រាស់ SellFlow
+            បទពិសោធន៍ពិតៗពីអ្នកលក់ដែលបានផ្លាស់ប្តូរមកប្រើប្រាស់ Selltify
           </p>
         </div>
 

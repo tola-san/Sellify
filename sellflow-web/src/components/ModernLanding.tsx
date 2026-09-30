@@ -47,8 +47,8 @@ const faqs = [
   ["How do customers place an order?", "Share your public store link. Customers can browse, add items to their cart, and check out from their phone without creating an account."],
   ["What happens after the 30-day trial?", "Your trial starts with Business features. After 30 days, choose Starter, Business, or Pro based on your catalog, staff, and business needs."],
   ["How do Telegram notifications work?", "Connect Telegram once to receive new-order alerts and send order or payment-status updates without keeping the dashboard open."],
-  ["Can I use SellFlow for a restaurant?", "Yes. Business and Pro support menu availability, add-ons, restaurant tables, and table QR ordering alongside the standard storefront."],
-  ["Do customers need a SellFlow account?", "No. SellFlow supports guest browsing and checkout, so customers can order quickly from the web or Telegram Mini App."],
+  ["Can I use Selltify for a restaurant?", "Yes. Business and Pro support menu availability, add-ons, restaurant tables, and table QR ordering alongside the standard storefront."],
+  ["Do customers need a Selltify account?", "No. Selltify supports guest browsing and checkout, so customers can order quickly from the web or Telegram Mini App."],
 ];
 
 const testimonials = [
@@ -148,7 +148,7 @@ export function ModernLanding() {
           <motion.div {...reveal} className="mx-auto max-w-2xl text-center">
             <SectionTag>Customer to fulfillment</SectionTag>
             <h2 className="mondai-heading mt-4">Unlock productivity with smart sales tools.</h2>
-            <p className="mondai-copy mx-auto mt-4 max-w-xl">SellFlow removes repetitive work between a customer discovering an item and your team completing the order.</p>
+            <p className="mondai-copy mx-auto mt-4 max-w-xl">Selltify removes repetitive work between a customer discovering an item and your team completing the order.</p>
           </motion.div>
           <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             <ToolCard title="Branded storefront" copy="A fast, mobile-first catalog with guest checkout." icon={Smartphone}><MiniStore /></ToolCard>
@@ -165,8 +165,8 @@ export function ModernLanding() {
           <motion.div {...reveal}>
             <SectionTag>Guest ordering</SectionTag>
             <h2 className="mondai-heading mt-4">A storefront that feels effortless on web and Telegram.</h2>
-            <p className="mondai-copy mt-5 max-w-md">Customers can browse and order without a SellFlow account. Your catalog, stock, and order queue stay consistent across every entry point.</p>
-            <button type="button" onClick={() => openAuth("register")} className="mondai-primary mt-7">Explore SellFlow <ArrowRight className="h-4 w-4" /></button>
+            <p className="mondai-copy mt-5 max-w-md">Customers can browse and order without a Selltify account. Your catalog, stock, and order queue stay consistent across every entry point.</p>
+            <button type="button" onClick={() => openAuth("register")} className="mondai-primary mt-7">Explore Selltify <ArrowRight className="h-4 w-4" /></button>
           </motion.div>
           <motion.div {...reveal} className="mondai-soft-panel overflow-hidden p-5 sm:p-7"><GuestChannelsMockup /></motion.div>
         </div>
@@ -180,7 +180,7 @@ export function ModernLanding() {
         <div className="mx-auto max-w-4xl text-center">
           <SectionTag>Frequently asked questions</SectionTag>
           <h2 className="mondai-heading mt-4">Getting started, answered.</h2>
-          <p className="mondai-copy mt-3">Everything you need to know before opening your first SellFlow store.</p>
+          <p className="mondai-copy mt-3">Everything you need to know before opening your first Selltify store.</p>
         </div>
         <div className="mx-auto mt-10 max-w-4xl divide-y divide-[#e5e1e9] border-y border-[#e5e1e9]">
           {faqs.map(([question, answer], index) => (
@@ -257,7 +257,7 @@ function ToolCard({ title, copy, icon: Icon, children }: { title: string; copy: 
 }
 
 function MiniStore() { return <div className="mx-auto w-40 rounded-[20px] border-[5px] border-[#302a38] bg-white p-2 shadow-lg"><div className="rounded-lg bg-[#7557e8] p-2 text-white"><p className="text-[8px] font-semibold">Bloom Café</p><p className="mt-1 text-[6px] text-white/70">Fresh favorites</p></div><div className="mt-2 grid grid-cols-2 gap-1.5">{[1,2,3,4].map(i => <span key={i} className="aspect-square rounded-md bg-[#f0ebf8]" />)}</div></div>; }
-function TelegramCard() { return <div className="mx-auto mt-4 max-w-[220px] rounded-xl border border-[#cde9f6] bg-white p-3 shadow-lg"><div className="flex items-center gap-2"><span className="grid h-8 w-8 place-items-center rounded-full bg-[#229ed9] text-white"><Send className="h-3.5 w-3.5" /></span><div><p className="text-[10px] font-semibold">New order #1048</p><p className="text-[8px] text-[#8e8794]">3 items · $24.50</p></div></div><button className="mt-3 w-full rounded-md bg-[#229ed9] py-2 text-[8px] font-semibold text-white">Open in SellFlow</button></div>; }
+function TelegramCard() { return <div className="mx-auto mt-4 max-w-[220px] rounded-xl border border-[#cde9f6] bg-white p-3 shadow-lg"><div className="flex items-center gap-2"><span className="grid h-8 w-8 place-items-center rounded-full bg-[#229ed9] text-white"><Send className="h-3.5 w-3.5" /></span><div><p className="text-[10px] font-semibold">New order #1048</p><p className="text-[8px] text-[#8e8794]">3 items · $24.50</p></div></div><button className="mt-3 w-full rounded-md bg-[#229ed9] py-2 text-[8px] font-semibold text-white">Open in Selltify</button></div>; }
 function StatusFlow() { return <div className="mx-auto mt-4 max-w-[230px] space-y-2">{["Order received", "Payment confirmed", "Ready for pickup"].map((x,i) => <div key={x} className="flex items-center gap-2 rounded-lg bg-white p-2 shadow-sm"><span className={`h-2 w-2 rounded-full ${i < 2 ? "bg-[#7557e8]" : "bg-[#d8d2df]"}`} /><span className="text-[9px] font-medium">{x}</span></div>)}</div>; }
 function StockList() { return <div className="mx-auto mt-3 max-w-[230px] overflow-hidden rounded-lg border border-[#e6e0eb] bg-white">{[["Khmer iced coffee", "42"], ["Coconut cake", "8"], ["Daily tote", "24"]].map(([name, n]) => <div key={name} className="flex items-center justify-between border-b border-[#eeeaf1] px-3 py-2.5 last:border-0"><span className="text-[9px] font-medium">{name}</span><span className="text-[8px] text-[#7557e8]">{n} left</span></div>)}</div>; }
 function MiniChart() { return <div className="mx-auto mt-4 flex h-28 max-w-[230px] items-end gap-2 rounded-lg bg-white p-4 shadow-sm">{[35,50,44,75,62,92,78].map((h,i) => <span key={i} className="flex-1 rounded-t bg-[#8264e8]" style={{height:`${h}%`}} />)}</div>; }
@@ -269,14 +269,14 @@ function StorefrontTile() { return <div className="pt-3"><div className="rounded
 
 function Integrations() {
   const items = [[Send,"Telegram"],[QrCode,"QR ordering"],[Globe2,"Web storefront"],[CircleDollarSign,"Payments"],[MessageCircleMore,"Customer updates"],[LayoutDashboard,"Dashboard"],[Palette,"Store themes"],[UsersRound,"Team access"]] as const;
-  return <section className="px-5 py-10 sm:px-8"><motion.div {...reveal} className="mondai-integration mx-auto max-w-5xl px-6 py-16 text-center sm:px-10"><div className="mx-auto flex max-w-xl flex-wrap justify-center gap-3">{items.map(([Icon,label],index)=><motion.span key={label} animate={{y:[0,index%2?-4:4,0]}} transition={{duration:4+index*.2,repeat:Infinity,ease:"easeInOut"}} className="grid h-12 w-12 place-items-center rounded-full border border-[#ddd5e8] bg-white text-[#7a5bd8] shadow-sm" aria-label={label}><Icon className="h-4 w-4" /></motion.span>)}</div><div className="mt-8"><SectionTag>Connected by design</SectionTag></div><h2 className="mondai-heading mx-auto mt-4 max-w-xl">Your essential selling tools, working together.</h2><p className="mondai-copy mx-auto mt-4 max-w-lg">Storefront, customer communication, operations, and reporting stay in one SellFlow workflow.</p></motion.div></section>;
+  return <section className="px-5 py-10 sm:px-8"><motion.div {...reveal} className="mondai-integration mx-auto max-w-5xl px-6 py-16 text-center sm:px-10"><div className="mx-auto flex max-w-xl flex-wrap justify-center gap-3">{items.map(([Icon,label],index)=><motion.span key={label} animate={{y:[0,index%2?-4:4,0]}} transition={{duration:4+index*.2,repeat:Infinity,ease:"easeInOut"}} className="grid h-12 w-12 place-items-center rounded-full border border-[#ddd5e8] bg-white text-[#7a5bd8] shadow-sm" aria-label={label}><Icon className="h-4 w-4" /></motion.span>)}</div><div className="mt-8"><SectionTag>Connected by design</SectionTag></div><h2 className="mondai-heading mx-auto mt-4 max-w-xl">Your essential selling tools, working together.</h2><p className="mondai-copy mx-auto mt-4 max-w-lg">Storefront, customer communication, operations, and reporting stay in one Selltify workflow.</p></motion.div></section>;
 }
 
 function Testimonials() {
   const firstRow = testimonials.slice(0, 3);
   const secondRow = testimonials.slice(3);
 
-  return <section className="mondai-section overflow-hidden px-5 sm:px-8"><div className="mx-auto max-w-5xl"><div className="text-center"><SectionTag>Customer stories</SectionTag><h2 className="mondai-heading mt-4">Built for real local businesses.</h2><p className="mondai-copy mt-3">How sellers use SellFlow to make everyday work simpler.</p></div><motion.div {...reveal} className="relative mt-10 overflow-hidden"><Marquee pauseOnHover repeat={4} className="[--duration:42s]">{firstRow.map(item=><TestimonialCard key={item.name} item={item} />)}</Marquee><Marquee reverse pauseOnHover repeat={4} className="mt-2 [--duration:46s]">{secondRow.map(item=><TestimonialCard key={item.name} item={item} />)}</Marquee><div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent sm:w-28" /><div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent sm:w-28" /></motion.div></div></section>;
+  return <section className="mondai-section overflow-hidden px-5 sm:px-8"><div className="mx-auto max-w-5xl"><div className="text-center"><SectionTag>Customer stories</SectionTag><h2 className="mondai-heading mt-4">Built for real local businesses.</h2><p className="mondai-copy mt-3">How sellers use Selltify to make everyday work simpler.</p></div><motion.div {...reveal} className="relative mt-10 overflow-hidden"><Marquee pauseOnHover repeat={4} className="[--duration:42s]">{firstRow.map(item=><TestimonialCard key={item.name} item={item} />)}</Marquee><Marquee reverse pauseOnHover repeat={4} className="mt-2 [--duration:46s]">{secondRow.map(item=><TestimonialCard key={item.name} item={item} />)}</Marquee><div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent sm:w-28" /><div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent sm:w-28" /></motion.div></div></section>;
 }
 
 function TestimonialCard({ item }: { item: (typeof testimonials)[number] }) {

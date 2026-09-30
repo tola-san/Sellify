@@ -1,14 +1,13 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="favicon-gradient" x1="8" y1="6" x2="57" y2="59" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7657E8"/>
-      <stop offset="0.52" stop-color="#846CF0"/>
-      <stop offset="1" stop-color="#22C8EB"/>
-    </linearGradient>
+    <linearGradient id="favicon-top" x1="12" y1="14" x2="48" y2="47" gradientUnits="userSpaceOnUse"><stop stop-color="#A78BFA"/><stop offset="0.5" stop-color="#6D28D9"/><stop offset="1" stop-color="#DDD6FE"/></linearGradient>
+    <linearGradient id="favicon-left" x1="25" y1="26" x2="34" y2="58" gradientUnits="userSpaceOnUse"><stop stop-color="#7C3AED"/><stop offset="1" stop-color="#E9D5FF"/></linearGradient>
+    <linearGradient id="favicon-right" x1="49" y1="27" x2="40" y2="59" gradientUnits="userSpaceOnUse"><stop stop-color="#8B5CF6"/><stop offset="1" stop-color="#E0E7FF"/></linearGradient>
   </defs>
-  <rect x="2" y="2" width="60" height="60" rx="18" fill="url(#favicon-gradient)"/>
-  <path d="M21 23V20C21 13.9 25.9 9 32 9C38.1 9 43 13.9 43 20V23" stroke="white" stroke-width="4.5" stroke-linecap="round"/>
-  <path d="M44 28H27.3C23.3 28 20 30.6 20 33.8C20 37 23.3 39.6 27.3 39.6H36.7C40.7 39.6 44 42.2 44 45.4C44 48.6 40.7 51.2 36.7 51.2H20" stroke="white" stroke-width="5.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M25 46.5L19.5 51.2L25 55.5" stroke="white" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="50" cy="14" r="3.5" fill="#A5F3FC"/>
+  <rect width="64" height="64" rx="15" fill="#080611"/>
+  <g transform="translate(5 4) scale(.84)">
+    <path d="M18.4 11H41.4C44 11 46.4 12.4 47.7 14.7L53 23.9C54 25.7 54 27.9 53 29.7L41 50.5H28.8L42.4 27H11.3L18.4 11Z" fill="url(#favicon-top)"/>
+    <path d="M13.5 25.8H35.7L30.2 35.3H21.2L28.7 48.4H44.2L37.8 59.5H25.6C22.9 59.5 20.5 58.1 19.1 55.8L9.8 39.6C8.5 37.4 8.5 34.7 9.8 32.5L13.5 25.8Z" fill="url(#favicon-left)"/>
+    <path d="M49.6 26.6L56 37.6L43.4 59.5H30.7L49.6 26.6Z" fill="url(#favicon-right)"/>
+  </g>
 </svg>

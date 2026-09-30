@@ -77,7 +77,7 @@ export function ThemePage() {
 
       <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_minmax(420px,0.9fr)]">
         <div className="space-y-6">
-          <Panel title="Dashboard appearance" description="Personalize your private SellFlow workspace. This does not change the customer storefront.">
+          <Panel title="Dashboard appearance" description="Personalize your private Selltify workspace. This does not change the customer storefront.">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {(Object.keys(DASHBOARD_THEMES) as DashboardThemeId[]).map((themeId) => {
                 const item = DASHBOARD_THEMES[themeId];

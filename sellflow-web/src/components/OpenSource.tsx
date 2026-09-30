@@ -33,7 +33,7 @@ export function OpenSource() {
               Built on modern, reliable technology.
             </h2>
             <p className="text-lg text-white/60 mb-8">
-              SellFlow is proudly open-source under the MIT License. We believe
+              Selltify is proudly open-source under the MIT License. We believe
               in transparency and empowering developers to build upon our
               foundation.
             </p>

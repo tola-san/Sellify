@@ -54,7 +54,7 @@ export function RegisterForm({ onSwitch }: RegisterFormProps) {
       });
 
       closeAuth(); // Close the auth modal
-      showToast("Your SellFlow account was created successfully.");
+      showToast("Your Selltify account was created successfully.");
       navigate("/onboarding");
 
     } catch (error: any) {

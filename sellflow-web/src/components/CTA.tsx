@@ -40,7 +40,7 @@ export function CTA() {
           transition={{ delay: 0.1 }}
           className="text-xl text-zinc-600 max-w-2xl mx-auto mb-12"
         >
-          Join thousands of restaurants, cafés, and shops using SellFlow to 
+          Join thousands of restaurants, cafés, and shops using Selltify to
           create beautiful menus and grow their business.
         </motion.p>
 

@@ -82,7 +82,7 @@ export function AuthModal() {
                     <ShoppingBag className="w-5 h-5 text-white" />
                   </div>
                   <span className="font-display font-bold text-xl">
-                    SellFlow
+                    Selltify
                   </span>
                 </div>
                 <h3 className="font-display text-2xl font-bold leading-snug mb-6">

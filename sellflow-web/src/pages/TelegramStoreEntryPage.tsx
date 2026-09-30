@@ -23,7 +23,7 @@ export function TelegramStoreEntryPage() {
     <main className="grid min-h-[100dvh] place-items-center bg-gradient-to-b from-sky-50 to-white px-6 py-12 text-center">
       <div className="w-full max-w-sm">
         <span className="mx-auto grid h-20 w-20 place-items-center rounded-3xl bg-white text-[#229ED9] shadow-xl shadow-sky-100"><Store size={36} /></span>
-        <p className="mt-7 inline-flex items-center gap-2 rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700"><Send size={13} /> SellFlow Mini App</p>
+        <p className="mt-7 inline-flex items-center gap-2 rounded-full bg-sky-100 px-3 py-1 text-xs font-semibold text-sky-700"><Send size={13} /> Selltify Mini App</p>
         <h1 className="mt-4 text-3xl font-bold tracking-tight text-slate-950">Open a store link</h1>
         <p className="mt-3 text-sm leading-6 text-slate-600">This Mini App opens a specific seller’s storefront. Return to the seller’s Telegram channel or message and tap their Shop button.</p>
         {isTelegramClient && <button type="button" onClick={close} className="mt-8 w-full rounded-2xl bg-[#229ED9] px-5 py-3.5 text-sm font-semibold text-white shadow-lg shadow-sky-200">Close Mini App</button>}
