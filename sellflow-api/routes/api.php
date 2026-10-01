@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\Api\Auth\AuthController;
 use App\Http\Controllers\Api\Auth\ProfileController;
+use App\Http\Controllers\Api\Billing\BillingController;
 use App\Http\Controllers\Api\Business\BusinessController;
 use App\Http\Controllers\Api\Business\BusinessThemeController;
 use App\Http\Controllers\Api\Business\TelegramNotificationController;
-use App\Http\Controllers\Api\Billing\BillingController;
 use App\Http\Controllers\Api\Category\CategoryController;
 use App\Http\Controllers\Api\Dashboard\AnalyticsController;
 use App\Http\Controllers\Api\Dashboard\DashboardController;
@@ -19,9 +19,10 @@ use App\Http\Controllers\Api\Restaurant\MenuAvailabilityController;
 use App\Http\Controllers\Api\Restaurant\RestaurantTableController;
 use App\Http\Controllers\Api\Storefront\CheckoutController;
 use App\Http\Controllers\Api\Storefront\StorefrontController;
+use App\Http\Controllers\Api\Support\IssueReportController;
 use App\Http\Controllers\Api\TelegramWebhookController;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Broadcasting\BroadcastController;
+use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     // Public customer storefront. Authentication is intentionally not required.
@@ -57,6 +58,8 @@ Route::prefix('v1')->group(function () {
         Route::patch('/profile', [ProfileController::class, 'update']);
         Route::patch('/profile/password', [ProfileController::class, 'updatePassword'])
             ->middleware('throttle:auth.password');
+        Route::post('/issue-reports', [IssueReportController::class, 'store'])
+            ->middleware('throttle:5,1');
 
         // Subscription and billing
         Route::get('/billing', [BillingController::class, 'overview']);

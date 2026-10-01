@@ -36,6 +36,7 @@ import {
 } from "../../Services/notifications";
 import { subscribeToBusinessNotifications } from "../../lib/realtime";
 import { initializeNotificationSound, playNotificationSound } from "../../lib/notificationSound";
+import { IssueReportModal } from "./IssueReportModal";
 
 function DateTimeDisplay() {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
@@ -282,6 +283,7 @@ function notificationTone(type: NotificationType): string {
 export function DashboardLayout() {
   const [open, setOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
+  const [issueReportOpen, setIssueReportOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(() => localStorage.getItem("sellflow.sidebar.collapsed") === "true");
   const [dashboardTheme, setDashboardTheme] = useState<DashboardThemeId>(() => getDashboardThemeId());
   const navigate = useNavigate();
@@ -597,9 +599,12 @@ export function DashboardLayout() {
                       <Settings size={16} />
                       Settings
                     </button>
-                    <button className="flex w-full items-center gap-3 px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 transition">
+                    <button
+                      onClick={() => { setProfileOpen(false); setIssueReportOpen(true); }}
+                      className="flex w-full items-center gap-3 px-4 py-2.5 text-sm text-slate-700 transition-colors duration-150 hover:bg-slate-50 active:scale-[0.96]"
+                    >
                       <HelpCircle size={16} />
-                      Help
+                      Report an issue
                     </button>
 
                     <div className="border-t border-slate-100 mt-1">
@@ -630,6 +635,7 @@ export function DashboardLayout() {
           )}
           <Outlet />
         </main>
+        <IssueReportModal open={issueReportOpen} onClose={() => setIssueReportOpen(false)} />
       </div>
     </div>
   );
