@@ -17,11 +17,7 @@ export function DashboardMockup() {
       <div className="bg-white rounded-3xl border border-zinc-200 shadow-2xl overflow-hidden">
         {/* Browser Header */}
         <div className="h-12 bg-zinc-50 border-b border-zinc-100 flex items-center px-4">
-          <div className="flex gap-1.5">
-            <div className="w-3 h-3 rounded-full bg-red-400" />
-            <div className="w-3 h-3 rounded-full bg-amber-400" />
-            <div className="w-3 h-3 rounded-full bg-emerald-400" />
-          </div>
+
           <div className="mx-auto flex items-center gap-2 bg-white px-6 py-1 rounded-full text-xs text-zinc-400 font-mono border border-zinc-100">
             <ShoppingBag className="w-3.5 h-3.5" />
             app.sellflow.com/dashboard
