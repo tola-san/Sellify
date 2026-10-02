@@ -1,12 +1,10 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { Cake, Coffee, Flower2, Shirt, Smartphone } from "lucide-react";
+import { Flower2, Shirt, Smartphone } from "lucide-react";
 
 const sellerTypes = [
   { name: "Fashion sellers", icon: Shirt },
   { name: "Beauty shops", icon: Flower2 },
   { name: "Phone stores", icon: Smartphone },
-  { name: "Coffee shops", icon: Coffee },
-  { name: "Bakeries", icon: Cake },
 ];
 
 export function TrustedBy() {
@@ -29,7 +27,7 @@ export function TrustedBy() {
             transition={{ duration: 24, repeat: Infinity, ease: "linear" }}
           >
             {repeated.map((seller, index) => (
-              <div key={`${seller.name}-${index}`} className="flex min-w-44 items-center justify-center gap-2.5 rounded-full border border-white bg-white/80 px-5 py-3 text-sm font-semibold text-slate-600 shadow-sm backdrop-blur">
+              <div key={`${seller.name}-${index}`} className="flex min-w-44 items-center justify-center gap-2.5 rounded-xl border border-violet-200 bg-white/80 px-2 py-2 text-sm font-semibold text-slate-600 shadow-sm backdrop-blur">
                 <seller.icon className="h-4 w-4 text-violet-600" />{seller.name}
               </div>
             ))}

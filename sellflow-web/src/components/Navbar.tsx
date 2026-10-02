@@ -65,14 +65,14 @@ export function Navbar() {
 
         <div className="hidden items-center gap-2 sm:flex">
           <LanguageSwitch compact />
-          <button onClick={() => openAuth("login")} className="rounded-lg border border-gray-200 px-3 py-2 text-[11px] font-semibold text-slate-700 transition hover:bg-[#f6f3f9]">
+          <button onClick={() => openAuth("login")} className="rounded-lg  px-3 py-2 text-[11px] font-semibold text-slate-700 transition hover:bg-brand/20 hover:text-brand">
             {t("Sign in")}
           </button>
           <motion.button
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.97 }}
             onClick={() => openAuth("register")}
-            className="group inline-flex h-9 items-center gap-2 rounded-lg bg-[#7557e8] px-4 text-[11px] font-semibold text-white shadow-[0_8px_18px_-10px_rgba(78,51,166,.7)] transition hover:bg-[#6549d3]"
+            className="group inline-flex h-9 items-center gap-2 rounded-lg bg-[#7557e8] px-4 text-[11px] font-semibold text-white  transition hover:bg-[#6549d3]"
           >
             <span>{t("Start trial")}</span><ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
           </motion.button>
@@ -95,7 +95,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -12, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -12, scale: 0.98 }}
-            className="mx-auto mt-2 max-w-6xl overflow-hidden rounded-lg border border-white/80 bg-white/90 p-4 shadow-2xl shadow-violet-200/50 backdrop-blur-2xl sm:hidden"
+            className="mx-auto mt-2 max-w-6xl rounded-lg border border-zinc-200 bg-white/90 p-4 shadow-2xl shadow-violet-200/50 backdrop-blur-2xl sm:hidden"
           >
             <nav className="flex flex-col gap-1">
               {navLinks.map((link) => (
@@ -108,8 +108,10 @@ export function Navbar() {
               <LanguageSwitch />
             </div>
             <div className="mt-3 grid grid-cols-2 gap-2">
-              <button onClick={() => { setMobileOpen(false); openAuth("login"); }} className="rounded-lg border border-zinc-200 px-2 py-2 text-sm font-semibold">{t("Sign in")}</button>
-              <button onClick={() => { setMobileOpen(false); openAuth("register"); }} className="rounded-lg mondai-primary px-2 py-2 text-sm font-semibold text-white">{t("Start trial")}</button>
+              <button onClick={() => { setMobileOpen(false); openAuth("login"); }} className="rounded-lg hover:bg-violet-100 hover:text-violet-700 px-2 py-2 text-sm font-semibold">{t("Sign in")}</button>
+              <button onClick={() => { setMobileOpen(false); openAuth("register"); }} className="rounded-lg bg-[#7557e8] px-2 py-2 text-sm font-semibold text-white hover:bg-[#6549d3]">
+                {t("Start trial")}
+              </button>
             </div>
           </motion.div>
         )}
